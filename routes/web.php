@@ -1,7 +1,9 @@
 <?php
 
+use App\Livewire\Ambiente\AmbienteCreate;
+use App\Livewire\Ambiente\AmbienteList;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/ambiente/create', AmbienteCreate::class)->name('ambiente.create');
+Route::get('/ambiente/list', AmbienteList::class)->name('ambiente.list');
+Route::get('/ambiente/edit', AmbienteList::class)->name('ambiente.edit');
