@@ -17,9 +17,6 @@ class SensorCreate extends Component
 
     public function store()
     {
-        $sensor = Sensor::all();
-        $ambiente = Ambiente::all();
-
         Sensor::create([
             'ambiente_id' => $this->ambiente_id,
             'codigo'=> $this->codigo,
@@ -27,7 +24,8 @@ class SensorCreate extends Component
             'descricao' => $this->descricao,
             'status' => $this->status
         ]);
-        session()->flash('success', 'Cadastro Realizado', compact('sensor'));
+        session()->flash('success', 'Cadastro Realizado');
+        return redirect()->route('sensor.list');
     }
 
     public function render()
