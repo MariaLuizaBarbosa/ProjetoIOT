@@ -46,7 +46,7 @@
                                     <td>{{ $a->descricao }}</td>
                                     <td>{{ $a->status }}</td>
                                     <td>
-                                        <a href="{{ route('ambiente.list', $a->id) }}" class="btn btn-sm"
+                                        <a href="{{ route('ambiente.edit', $a->id) }}" class="btn btn-sm"
                                             style="background-color: rgb(240, 240, 146)">EDITAR</a>
                                     </td>
                                 </tr>
@@ -57,6 +57,7 @@
                 </div>
 
             </div>
+            
         </div>
     </div>
 </div>

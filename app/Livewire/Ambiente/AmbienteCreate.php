@@ -19,6 +19,7 @@ class AmbienteCreate extends Component
             'status' => $this->status
         ]);
         session()->flash('success', 'Cadastro Realizado');
+        return redirect()->route('ambiente.list');
         
     }
 
