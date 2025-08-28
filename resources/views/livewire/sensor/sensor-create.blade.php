@@ -22,7 +22,7 @@
                         <label for="codigo" class="form-label fw-bold text-center">CÓDIGO</label>
                         <input type="text" class="form-control" id="codigo" name="codigo"
                             wire:model.defer="codigo">
-                        @error('código')
+                        @error('codigo')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>

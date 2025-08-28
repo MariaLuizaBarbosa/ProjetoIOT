@@ -15,8 +15,25 @@ class SensorCreate extends Component
     public $status;
     public $sensor;
 
+     protected $rules = [
+        'ambiente_id' => 'required',
+        'codigo' => 'required|unique:sensors,codigo',
+        'tipo' => 'required',
+        'status' => 'required'
+    ];
+
+    protected $messages = [
+        'ambiente_id.required' => 'O campo é obrigatório',
+        'codigo.required' => 'O campo é obrigatório',
+        'codigo.unique' => 'O campo é único',
+        'tipo.required' => 'O campo é obrigatório',
+        'status.required' => 'O campo é obrigatório'
+    ];
+
     public function store()
     {
+        $this->validate();
+
         Sensor::create([
             'ambiente_id' => $this->ambiente_id,
             'codigo'=> $this->codigo,
