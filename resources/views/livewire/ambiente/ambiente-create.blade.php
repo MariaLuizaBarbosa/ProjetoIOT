@@ -39,7 +39,7 @@
                     <div class="mb-3">
                         <label for="status" class="form-label fw-bold">Status</label>
                         <select class="form-select" aria-label="Default select example" wire:model.defer="status">
-                            <option hidden>status</option>
+                            <option hidden></option>
                             <option value="1">Ativo</option>
                             <option value="0">Inativo</option>
                         </select>
