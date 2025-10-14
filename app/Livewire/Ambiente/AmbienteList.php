@@ -8,8 +8,6 @@ use Livewire\WithPagination;
 
 class AmbienteList extends Component
 {
-
-    
     use WithPagination;
 
     public $search = '';
@@ -22,14 +20,11 @@ class AmbienteList extends Component
 
     public function render()
     {
-        $ambiente = Ambiente::all();
-
-        // $ambiente = Ambiente::where('nome', 'like', "%{$this->search}%")
-        // ->orWhere('descricao', 'like', "%{$this->search}%")
-        // ->orWhere('status', 'like', "%{$this->search}%")
-        // ->paginate($this->perPage);
+        $ambiente = Ambiente::where('nome', 'like', "%{$this->search}%")
+         ->orWhere('descricao', 'like', "%{$this->search}%")
+         ->orWhere('status', 'like', "%{$this->search}%")
+         ->paginate($this->perPage);
 
         return view('livewire.ambiente.ambiente-list', compact('ambiente'));
     }
-
 }

@@ -20,12 +20,10 @@ class SensorList extends Component
 
     public function render()
     {
-        $sensor = Sensor::all();
-
-       //  $sensor = Sensor::where('nome', 'like', "%{$this->search}%")
-     //     ->orWhere('descricao', 'like', "%{$this->search}%")
-     //    ->orWhere('status', 'like', "%{$this->search}%")
-      //    ->paginate($this->perPage);
+        $sensor = Sensor::where('nome', 'like', "%{$this->search}%")
+          ->orWhere('tipo', 'like', "%{$this->search}%")
+          ->orWhere('status', 'like', "%{$this->search}%")
+          ->paginate($this->perPage);
 
         return view('livewire.sensor.sensor-list', compact('sensor'));
     }
