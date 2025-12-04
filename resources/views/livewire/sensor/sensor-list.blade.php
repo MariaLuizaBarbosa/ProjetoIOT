@@ -41,7 +41,7 @@
                             </thead>
                             {{-- --------------------------------------------------------------------------------------- --}}
                             <tbody>
-                                @foreach ($sensor as $s)
+                                @foreach ($sensores as $s)
                                     <tr>
                                         <td>{{ $s->ambiente->nome }}</td>
                                         <td>{{ $s->codigo }}</td>
@@ -51,8 +51,16 @@
                                         <td>
                                             <a href="{{ route('sensor.edit' , $s->id) }}" class="btn btn-sm"
                                                 style="background-color: rgb(240, 240, 146)">EDITAR</a>
-
-                                        </td>
+                                        
+                                        
+                                        <button wire:click="delete({{$s->id}})"
+                                            class="btn btn-sm btn-danger"wire:confirm = "Tem certeza que deseja excluir">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                            </td>
+                                        
+    
+                                    
                                     </tr>
                                 @endforeach
                             </tbody>

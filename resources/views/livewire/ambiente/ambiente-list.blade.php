@@ -49,6 +49,12 @@
                                         <a href="{{ route('ambiente.edit', $a->id) }}" class="btn btn-sm"
                                             style="background-color: rgb(240, 240, 146)">EDITAR</a>
                                     </td>
+                                    <td>
+                                        <button wire:click="delete({{ $a->id }})"
+                                            class="btn btn-sm btn-danger"wire:confirm="Tem certeza que deseja excluir">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

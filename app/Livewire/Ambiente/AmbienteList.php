@@ -27,4 +27,10 @@ class AmbienteList extends Component
 
         return view('livewire.ambiente.ambiente-list', compact('ambiente'));
     }
+
+    public function delete($id)
+    {
+        Ambiente::findOrFail($id)->delete();
+        session()->flash('message', 'Ambiente deletado com sucesso');
+    }
 }
